@@ -62,43 +62,51 @@ class _DioTutorialState extends State<DioTutorial> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:
-      AppBar(
-        backgroundColor: Colors.deepPurpleAccent,
-        title: const Text('Dio Tutorial'),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              // Button for getting request
-              ElevatedButton(
-                // method will be implemented later
-                onPressed: fetchGetJsonData,
-                child: const Text('Get Data/Get Response'),
-              ),
-              // To display the response of Get the request of screen
-              Container(
-                width: 300,
-                padding: const EdgeInsets.all(15),
-                child: Text(_getResponse),
-              ),
-              // Button for Post request
-              ElevatedButton(
-                // method will be implemented later
-                onPressed: fetchPostJsonData,
-                child: const Text('Post Data/Post Response'),
-              ),
-              Container(
-                width: 300,
-                padding: const EdgeInsets.all(15),
-                child: Text(_postResponse),
-              )
-            ],
-          )
+    return SafeArea(
+      child: Scaffold(
+        appBar:
+        AppBar(
+          backgroundColor: Colors.deepPurpleAccent,
+          title: const Text('Dio Tutorial'),
         ),
-      );
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                // Button for getting request
+                ElevatedButton(
+                  // method will be implemented later
+                  onPressed: fetchGetJsonData,
+                  style: TextButton.styleFrom(
+                      backgroundColor: Colors.deepPurple,
+                      foregroundColor: Colors.white),
+                  child: const Text('Get Data/Get Response'),
+                ),
+                // To display the response of Get the request of screen
+                Container(
+                  width: 300,
+                  padding: const EdgeInsets.all(15),
+                  child: Text(_getResponse),
+                ),
+                // Button for Post request
+                ElevatedButton(
+                  // method will be implemented later
+                  onPressed: fetchPostJsonData,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.deepPurple,
+                    foregroundColor: Colors.white),
+                  child: const Text('Post Data/Post Response'),
+                ),
+                Container(
+                  width: 300,
+                  padding: const EdgeInsets.all(15),
+                  child: Text(_postResponse),
+                )
+              ],
+            )
+          ),
+        ),
+    );
   }
 }
 
